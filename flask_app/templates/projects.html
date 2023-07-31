@@ -1,0 +1,46 @@
+<!-- @author:chowdh83 -->
+
+{% extends 'shared/layout.html' %}
+{% block maincontent %}
+    <div class="intro">
+        <h1>Below is a list of projects i have finished in CSE 477:</h1>
+        <p>Click an image, or hyperlink in the description to learn more. </p>
+        <hr>
+    </div>
+    <div class="projects-container">
+        <div class="project">
+            <div>
+                <a href="/piano">
+                <img class = "img" src="../static/main/images/piano.jpeg" alt="A picture of me" title="Picture of Piano" loading="lazy">
+                </a>
+            </div>
+            <div>
+                This is my piano project from CSE 477 Homework 1 with a hidden twist. <a href="/piano">link to the project
+            </div>
+        </div>
+        
+        <div class="project">
+            <div>
+                <a href="https://github.com/tenglina/Hate-Speech-Recognition">
+                    <img class = "img" src="../static/main/images/no-hate.png" alt="A picture of me" title="No Hate Picture" loading="lazy">
+                </a>
+            </div>
+            <div>
+                This is my Machine Learning Hate Speech Recognition Project. This Project utilizes various machine learning techniques. <a href="https://github.com/tenglina/Hate-Speech-Recognition">link to the project
+            </div>
+        </div>
+
+        <div class="project">
+            <div>
+                <a href="/marketplace">
+                    <img class = "img" src="../static/main/images/NFT-proj.png" alt="A picture of NFT" title="NFT Project" loading="lazy">
+                </a>
+            </div>
+            <div>
+                This is my NFT Market place Website. <a href="/marketplace">link to the project
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

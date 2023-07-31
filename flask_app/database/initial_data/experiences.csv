@@ -1,0 +1,5 @@
+"experience_id","position_id","name","description","hyperlink","start_date","end_date"
+"1","1","Web-development internship","During this time i leared how to use .NET and razor pages",NULL,NULL,NULL
+"2","1","business research internship","During this time I learned many nusiness process and standards followed in Bangladesh",NULL,NULL,NULL
+"3","3","Software Development","During my time in MSU I have attended CSE335 and CSE435 which go deep into the software development cycle",NULL,NULL,NULL
+"4","3","Algorithm Engineering","Measured and studied the complexity of different algorithms and Data structures",NULL,NULL,NULL

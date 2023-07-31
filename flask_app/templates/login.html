@@ -1,0 +1,36 @@
+{% extends 'shared/layout.html' %}
+
+{% block extrajs %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{% endblock %}
+
+
+{% block maincontent %}
+<br><br>
+<div class="log-in">
+
+    <form class="log-in-form" action="/processlogin" method="post" enctype = "multipart/form-data">
+        <h1>Hello User! Please Log in to continue.</h1>
+        <label for="email">Email</label>
+        <br>
+        <input type="text" id="email" name="email"  required>
+        <br>
+        <label for="password">Password</label>
+        <br>
+        <input type="text" id="password" name="password"  required>
+        <br>
+        <input type="submit" value="Log in">
+    </form>
+
+    <div class="login-error">
+        {% if error != "" %}
+        <h3>{{error}}</h3>
+        {% endif %}
+    </div>
+
+    <h2>Dont have an account? no worries signup <a href="/signup">here.</a></h2>
+</div>
+
+{% endblock %}
+
+

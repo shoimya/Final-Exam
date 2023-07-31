@@ -1,0 +1,46 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+<div class="nft-options">
+    <button type="button" class="collapsible-nft">MARKET PLACE</button>
+    <div class="market-content">
+        <a href="/marketplace">Market place</a><br><br>
+        <a href="/seller">Sell</a><br><br>
+        <a href="/buyer">Buy</a><br><br>
+        <a href="/transactionrecord">Transaction Record</a><br><br>
+        <a href="/portfolio">Market portfolio</a><br><br>
+    </div>
+</div>
+
+<div class="marketplace-intro">
+    <table>
+        <tr>
+            <th>USER ROLE</th>
+            <th>USER EMAIL</th>
+            <th>USER KEY</th>
+            <th>USER ID</th>
+        </tr>
+        <tr>
+            <td>{{data['role']}}</td>
+            <td>{{data['email']}}</td>
+            <td>{{data['user_key']}}</td>
+            <td>{{data['user_id']}}</td>
+        </tr>
+    </table>
+
+</div>
+
+<div class="seller-owned">
+    {% if collection != "" %}
+    <h3>HERE ARE THE NFTS IN YOUR COLLECTION!</h3>
+
+    {% for nft in collection %}
+        <p>NFT ID: {{nft['nft_id']}},   Created On: {{nft['created_at']}},   Amount: {{nft['amount']}} Tokens.</p>
+        <p>Description: {{nft['description'].upper()}}.</p>
+        <img src=..{{nft['nft_path'][11:]}} alt="image">
+    {% endfor %}
+    {%endif%}
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,62 @@
+/* @AUTHOR:SHOIMYA CHOWDHURY */
+/* intro css */
+.intro{
+    margin: 5%;
+    margin-bottom: 0;
+    align-items: center;
+    text-align: center ;
+}
+/* project container css */
+.projects-container{
+    margin: 3%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    justify-content: center;
+    align-items: center;
+}
+
+/* style fpr project container divs */
+.projects-container > div{
+    background-color: #ffffff;
+    width: 98%;
+    margin: 10px;
+    text-align: center;
+    height: 51vh;
+    font-size: 30px;
+    font-size: large;
+    font-weight: 480;
+}
+/* style for idividual projects  */
+.project{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.project > div{
+    background-color: #ffffff;
+    width: 25vw;
+    margin: 10px;
+    text-align: center;
+    height: 51vh;
+    font-size: 30px;
+    font-size: large;
+    font-weight: 480;
+}
+.project > div > a > img{
+    width: 100%;
+    height:98%;
+    border: 10px double #720665;
+    position: relative;
+}
+/* for responsiveness */
+@media screen and (max-width: 650px){
+    .project{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

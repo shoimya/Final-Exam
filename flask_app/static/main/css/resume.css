@@ -1,0 +1,63 @@
+/* @Author: Shoimya Chowdhury */
+/* style for teh whole container  */
+.resume-container{
+    margin: 7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* style for resume cards */
+.resume-card{
+    width: 100%;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+
+}
+
+/* style for departments */
+.department{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+/* style for positions */
+.position{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: large;
+}
+
+/* style for experience name-discriprion */
+.exp-name-disc{
+    padding: 0.3%;
+    padding-left: 3vw;
+}
+/* style for skills */
+.skills{
+    padding: 0.2%;
+    padding-left: 4vw;
+    font-size: larger;
+    text-transform: capitalize;
+}
+
+.skill-list > li{
+    padding-left: 4vw;
+    font-size: larger;
+}
+
+@media screen and (max-width: 650px){
+    .department{
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-between; */
+    }
+
+    .position{
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-between; */
+        font-size: large;
+    }
+
+}

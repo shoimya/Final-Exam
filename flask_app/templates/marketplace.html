@@ -1,0 +1,40 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+
+<!-- <div class="nft-options">
+<h1>NFT MARKETPLACE</h1>
+<a href="/marketplace">Market place</a>
+<a href="/transactionrecord">Transaction Record</a>
+<a href="/portfolio">Market portfolio</a>
+</div> -->
+<div class="nft-options">
+<button type="button" class="collapsible-nft">MARKET PLACE</button>
+<div class="market-content">
+    <a href="/marketplace">Market place</a><br><br>
+    <a href="/seller">Sell</a><br><br>
+    <a href="/buyer">Buy</a><br><br>
+    <a href="/transactionrecord">Transaction Record</a><br><br>
+    <a href="/portfolio">Market portfolio</a><br><br>
+</div>
+</div>
+
+<div class="marketplace-intro">
+    <h1>Welcome to the NFT market place created for CSE 477 Finals</h1>
+    {% if first_time == True %}
+    <h3>Hello first time user! This is a NFT market made to mimic actual nft trading websites.</h3>
+    <h3>As this is your first time I wil tell you everything you can do on this market.</h3>
+    <br>
+    <ul>
+        <li>When you sign-up and log-in you are a buyer and a seller with 1000 tokens. There is a buyer page and a seller page.</li>
+        <li>to sell you may upload a small image file or choose one from the options.</li>
+        <li>Once sold, that NFT will appear in the buyers selling portfolio so it will appear on your buyer page.</li>
+        <li>Click portfolio tab to see your portfolio.</li>
+    </ul>
+    <br>
+    
+    {% endif %}
+    <h2>Do you wish to <a href="/buyer"> BUY </a> or <a href="/seller"> SELL </a> Today? </h2>
+</div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+<div class="flex-container">
+  <div>
+    <img src="../static/main/images/portfolio-pic.jpg" alt="pic of me " title="Shoimya Chowdhury" loading="lazy">
+  </div>
+  <div class="scroll">
+    <!-- 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif -->
+    <p>
+      <b>Shoimya Chowdhury</b> is a driven and talented Computer Science and Engineering senior at Michigan State University. 
+      With a GPA of 3.65/4.0, Shoimya has excelled academically and has gained invaluable professional experience 
+      through his web development and business research internship at DataSoft Systems Bangladesh Ltd. During his internship, 
+      Shoimya utilized C# and HTML Agility Pack in Visual Studio to develop a console application that scraped and stored market information, 
+      and researched user interface and user experience standards in the financial technology industry to create a Business Requirement Document. 
+      <br><br>
+      Additionally, he has worked on several academic projects, such as building a side-scrolling game with 3 playable levels using Clion and wxWidgets 
+      and implementing fundamental data structures in programming projects using PyCharm. Shoimya is also an active member of the MSU Bangladesh Student 
+      Association and has previously served as the President of DPS Business Republic Club. With a broad skill set that includes programming languages like Python, 
+      C++, C#, and HTML, as well as leadership, teamwork, and management abilities, Shoimya is poised to make a significant impact in the computer science and engineering industry.
+    </p>
+  </div>
+
+</div>
+<!-- Another block of content -->
+<hr>
+
+<p class="fun-fact">
+  A fun fact about me: <b>{{fun_fact}}</b> 
+</p>
+{% endblock %}
+
+

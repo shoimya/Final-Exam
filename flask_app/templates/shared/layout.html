@@ -1,0 +1,134 @@
+<!-- FILL ME IN WITH CODE FOR YOUR PAGE LAYOUT -->
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shoimya Chowdhury's Personal Webpage</title>
+  <!-- <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/main.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='main/images/favicon.ico') }}"> -->
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/main.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/home.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/resume.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/projects.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='piano/css/piano.css') }}">
+  <link href='https://fonts.googleapis.com/css?family=Dekko' rel='stylesheet'>
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/feedback.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/header.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/footer.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/nav.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='main/images/favicon.ico') }}">
+  {% block extracss %}{% endblock %}
+  <script src="{{ url_for('static', filename='main/js/main.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='main/js/feedback.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='piano/js/piano.js') }}" defer></script>
+  {% block extrajs %}{% endblock %}
+</head>
+
+<body>
+    <article>
+    <!-- The header  -->
+    <header class = "header_image">
+      <!-- a nice green header  -->
+    </header>
+
+    <!-- The navigation bar -->
+    <!-- <nav>
+      <div>
+      {% if user == 'Unknown' %}  
+      <p>Shoimya's Website</p>
+      {% else %}
+      <p>Logged in as {{user}}</p>
+      {% endif %}
+      <br>
+      
+
+      <a href="/home">Home</a>
+      <a href="/login">Login</a>
+      <a href="/logout">Logout</a>
+      <a href="/marketplace">Market place</a>
+      <a href="/transactionrecord">Transaction Record</a>
+      <a href="/portfolio">Market portfolio</a>
+    </nav> -->
+    <nav class="navigation">
+      <h1 class="logo">
+        {% if user == 'Unknown' %}  
+        <p>Shoimya's Website</p>
+        {% else %}
+        <p>Logged in as: {{user}}</p>
+        {% endif %}
+      </h1>
+      <input class="menu-btn" type="checkbox" id="menu-btn" />
+      <label class="menu-icon" for="menu-btn"><span class="navicon">
+      </span></label>
+      <ul class="menu">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/resume">Resume</a></li>
+        <li><a href="https://www.linkedin.com/in/shoimya-chowdhury">
+          <!-- LinkedIn -->
+          <img src="../static/main/images/social-linkedin.png" alt=""style="height: 30px; width: 30px; padding: 0;">
+        </a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+      
+    </nav>
+
+    <div id="feedback-main">
+      <div id="feedback-div">
+        <form action="/processfeedback" method="post" class="form" id="feedback-form1" name="form1" enctype="multipart/form-data">
+    
+          <p class="name">
+            <input name="name" type="name" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" required placeholder="Name" id="feedback-name" />
+          </p>
+    
+          <p class="email">
+            <input name="email" type="email" class="validate[required,custom[email]] feedback-input" id="feedback-email" placeholder="Email" required />
+          </p>
+    
+          <p class="text">
+            <textarea name="comment" type="comment" class="validate[required,length[6,300]] feedback-input" id="feedback-comment" required placeholder="Hey! Please let me know what you think and you may drop you contact info as well. Thanks!"></textarea>
+          </p>
+    
+          <div class="feedback-submit">
+            <input type="submit" value="SEND" id="feedback-button-blue" />
+            <div class="feedback-ease"></div>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+    <button id="popup" class="feedback-button" onclick="toggle_visibility()">Feedback</button>
+
+
+    <!-- The main content  -->
+    <main>
+      {% block maincontent %}{% endblock %}
+    </main>
+
+    <!-- The footer of the file -->
+    <div class="myfooter">
+      <p>© 2022 Shoimya Chowdhury</p>
+    </div>
+
+    </article>
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+
+      <div class="resume-container">
+        <div class="resume-card">
+          <!-- For each institution - generate a row --> 
+          {% for inst_id, inst in resume_data.items() %}
+          <!-- Do something... -->
+          <div class="inst-name">
+            <h1>{{ inst['name']}} </h1>
+          </div>
+          
+          <div class="department">
+            <h2>{{ inst['department'] }}</h2>
+            <h2>{{inst['city'] }}, {{inst['state'] }}</h2>
+          </div>
+          
+            {% if inst['positions'] != {} %}
+              {% for pos_id, pos in inst['positions'].items() %}
+              <!-- Do something else... -->
+              <ul class="position">
+                <li>{{ pos['title']}} </li>
+                <li>{{pos['start_date']}} - {{pos['end_date']}}</li>
+              </ul>
+            
+                {% if pos['experiences'] != {} %}
+                  {% for exp_id, exp in pos['experiences'].items() %}
+                    <div class="exp-name-disc">
+                      <h3>{{ exp['name'] }}</h3>
+                      <li>{{ exp['description']}}</li>
+                    </div>
+                    {% if exp['skills'] != {} %}
+                      <div class="skills">skills :-</div>
+                      <!-- <h3 style="padding-left: 4vw;">skills</h3> -->
+                      <div class="skill-list">
+                        {% for skill_id, skill in exp['skills'].items() %}
+                        <li>{{ skill['name'] }} : {{ skill['skill_level']}}</li>
+                        {% endfor %}
+                      </div>
+
+
+                    {% endif %}
+
+
+                  {% endfor %}
+                {% endif %}
+
+              {% endfor %}
+            {% endif %}
+
+          <hr style="margin-top: 1%; margin-bottom: 1%;">
+          {% endfor %}
+
+        </div>
+
+      </div>
+
+
+
+{% endblock %}
+
+

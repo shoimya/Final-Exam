@@ -1,0 +1,67 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+
+<div class="nft-options">
+    <button type="button" class="collapsible-nft">MARKET PLACE</button>
+    <div class="market-content">
+        <a href="/marketplace">Market place</a><br><br>
+        <a href="/seller">Sell</a><br><br>
+        <a href="/buyer">Buy</a><br><br>
+        <a href="/transactionrecord">Transaction Record</a><br><br>
+        <a href="/portfolio">Market portfolio</a><br><br>
+    </div>
+</div>
+
+<div class="marketplace-intro">
+    <h1>Hello Admin! These are all the transactions happening on our system.</h1>
+    <h2>As you see, there are record for when user first uploads a nft, even when user edits it and obviusly record of change of ownership.</h2>
+    {% if valid == True%}
+        {% if data == [] %}
+            <h3>No transactions currently in the system.</h3>
+        
+        
+        {% else %}
+        
+            <h1>all the transactions from the database</h1>
+            <table>
+                <tr>
+                    <th>Transaction ID</th>
+                    <th>NFT ID</th>
+                    <th>NFT Creation Date</th>
+                    <th>TOKENS</th>
+                    <th>Owner ID of NFT</th>
+                    <th>Buyer ID</th>
+                    <th>Seller ID</th>
+                    <th>Transaction Date</th>
+                    <th>Type of Transaction</th>
+                </tr>
+            
+                {%for items in data%}
+                    <tr>
+                        <td>{{items['tran_id']}}</td>
+                        <td>{{items['nft_id']}}</td>
+                        <td>{{items['nft_date']}}</td>
+                        <td>{{items['amount']}}</td>
+                        <td>{{items['owner_id']}}</td>
+                        <td>{{items['buyer_id']}}</td>
+                        <td>{{items['seller_id']}}</td>
+                        <td>{{items['transaction_date']}}</td>
+                        <td>{{items['type']}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        
+        
+        
+        {% endif%}
+
+    {% endif %}
+
+    {% if valid == False%}
+        <h1>You need admin access to be view transaction information.</h1>
+    {% endif %}
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'shared/layout.html' %}
+
+{% block extrajs %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{% endblock %}
+
+{% block maincontent %}
+
+<div class="nft-options">
+  <button type="button" class="collapsible-nft">MARKET PLACE</button>
+  <div class="market-content">
+      <a href="/marketplace">Market place</a><br><br>
+      <a href="/seller">Sell</a><br><br>
+      <a href="/buyer">Buy</a><br><br>
+      <a href="/transactionrecord">Transaction Record</a><br><br>
+      <a href="/portfolio">Market portfolio</a><br><br>
+  </div>
+</div>
+
+<div class="error">
+{%if message != ""%}
+<p>{{message}}</p>
+{%endif%}
+</div>
+
+
+<div class="buyer-page">
+  <h1>Hey {{user}}, these NFTs can be purchased! You can only purchase one NFT at a time.</h1>
+  {% for items in for_sale %}
+    <p>NFT ID: {{items['nft_id']}},   Creation Date: {{items['created_at']}},   Amount: {{items['amount']}} Tokens.</p>
+    <p>Description of NFT: {{items['description'].upper()}}.</p>
+    <img src=..{{items['nft_path'][11:]}} alt="image">
+    <br>
+    <form action="/buyer" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="purpose" value="purchase">
+        <input type="hidden" name="nft_id" value="{{ items['nft_id'] }}"><br>
+        <input type="hidden" name="owner_id" value="{{ items['owner_id'] }}"><br>
+        <input type="hidden" name="tokens" value="{{ items['amount'] }}"><br>
+        <input type="hidden" name="date" value="{{ items['created_at'] }}"><br>
+        <button type="submit">Purchase</button><br>
+    </form>      
+  {% endfor %}
+
+</div>
+  
+
+   
+
+
+
+
+{% endblock %}

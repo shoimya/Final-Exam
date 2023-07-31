@@ -1,0 +1,152 @@
+/* @Author: Shoimya Chowdhury */
+/* global style */
+* {
+    margin: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+body {
+background : rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+
+}
+
+.log-in{
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh; 
+	margin-top: 10vh;
+	/* background-color: brown; */
+}
+
+
+.sign-up-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh; /* make the form take up the full height of the viewport */
+	/* background-color: yellow; */
+	margin-top: 10vh;
+}
+
+
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible-nft {
+    background-color: #57054e;
+    color: #fefefe;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible-nft:hover {
+    background-color: #f3dddd;
+    color: #57054e;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.market-content {
+    padding: 0 18px;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: #f7e9e9;
+}
+
+.marketplace-intro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 30vh; 
+}
+
+.buyer-page{
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 10vh;
+}
+
+.buyer-page > img{
+    width: 150px;
+    height: 170px;
+}
+.seller-create{
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 10vh;
+}
+.seller-create> form > label > img {
+    width: 250px;
+    height: 250px;
+}
+
+.seller-upload{
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    padding-left: 42vw;
+    padding-bottom: 10vh;
+    padding-top: 5vh;
+}
+
+.seller-owned{
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* padding-left: 42vw; */
+    padding-bottom: 10vh;
+}
+.seller-owned > img {
+    width: 130px;
+    height: 180px;
+}
+
+.marketplace-intro > table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 80vw;
+    text-align: center;
+}
+
+.marketplace-intro > table, th, td {
+    border: 1px solid black;
+}
+.error{
+    text-align: center;
+    font-size: medium;
+}
+.error > p{
+    color: red;
+}
+
+.seller-owned > p, h3{
+    font-family: 'Dekko';font-size: 22px;
+}
+.buyer-page > p, h1{
+    font-family: 'Dekko';font-size: 22px;
+}
+
+.marketplace-intro > h1,h3,h2{
+    font-family: 'Dekko';font-size: 22px;
+}

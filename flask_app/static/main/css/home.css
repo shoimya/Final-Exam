@@ -1,0 +1,68 @@
+/* @author: Shoimya Chowdhury */
+/* fun-fact style */
+.fun-fact{
+    padding: 4%;
+    padding-top: 2%;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    font-size: 20px;
+}
+
+/* flex container style */
+.flex-container {
+    margin: 5%;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(255, 255, 255);
+    justify-content: center;
+}
+  
+.flex-container > div {
+    background-color: #ffffff;
+    width: 25vw;
+    margin: 10px;
+    text-align: center;
+    height: 51vh;
+    font-size: 30px;
+    overflow: auto;
+    font-size: large;
+    font-weight: 480;
+
+}
+
+/* image style */
+.flex-container > div > img {
+    width: 100%;
+    height:98%;
+    border: 10px double #720665;
+    position: relative;
+}
+
+/* style for paragraph */
+.scroll > p{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 2px;
+}
+
+/* for responsiveness */
+@media screen and (max-width: 650px){
+    .flex-container {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .flex-container > div {
+        background-color: #ffffff;
+        width: 82vw;
+        margin: 10px;
+        text-align: center;
+        height: 55vh;
+        font-size: 30px;
+        overflow: auto;
+    
+    }
+    .fun-fact{
+        padding: 10%;
+        padding-top: 1%;
+        text-align: center;
+    }
+}

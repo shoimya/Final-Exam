@@ -1,0 +1,16 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+<div class="feedback-container">
+    <h1>
+        Thanks for your feedback. Here's what others had to say:
+    </h1>
+
+    <div class="feedback-print">
+        {% for feed in feedbacks %}
+        <h3>{{feed["name"]}} said: {{feed["comment"]}}</h3>
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}

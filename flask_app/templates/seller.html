@@ -1,0 +1,65 @@
+{% extends 'shared/layout.html' %}
+
+
+{% block extrajs %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{% endblock %}
+
+{% block maincontent %}
+
+    <div class="nft-options">
+        <button type="button" class="collapsible-nft">MARKET PLACE</button>
+        <div class="market-content">
+            <a href="/marketplace">Market place</a><br><br>
+            <a href="/seller">Sell</a><br><br>
+            <a href="/buyer">Buy</a><br><br>
+            <a href="/transactionrecord">Transaction Record</a><br><br>
+            <a href="/portfolio">Market portfolio</a><br><br>
+        </div>
+    </div>
+
+    <div class="seller-upload">
+        <form action="seller" method="post" enctype = "multipart/form-data">
+            <div class="">
+                <input type="hidden" name="purpose" value="file">
+                <label for="desc">Description: </label>
+                <input type="text" name = "desc" placeholder="Type description of NFT here" required>
+    
+                <br><br>
+                <label for="token">Token: </label>
+                <input type="number" name = "token" placeholder="Enter token amount here" required>
+    
+                <br><br>
+                <label for="file">NFT Image File: </label>
+                <input type = "file" name = "file" />
+                
+                <div>
+                    <br>
+                    <button type="submit">Create NFT</button>
+                </div>
+                {%if error != ""%}
+                <h4>{{error}}</h4>
+                {%endif%}
+            </div>
+        </form>
+    </div>
+    
+
+    <div class='seller-owned'>
+        {% for items in Created %}
+        <p>NFT ID: {{items['nft_id']}}   Created On: {{items['created_at']}}   Amount: {{items['amount']}}</p>
+        <img src=..{{items['nft_path'][11:]}} alt="image">
+        <br>
+        <form action="/seller" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="purpose" value="edit">
+            <input type="hidden" name="nft_id" value="{{ items['nft_id'] }}"><br>
+            <input type="hidden" name="owner_id" value="{{ items['owner_id'] }}"><br>
+            <input type="text" name="description" value="{{ items['description'] }}"><br>
+            <input type="number" name="tokens" value="{{ items['amount'] }}"><br>
+            <button type="submit">Save Edit</button><br>
+        </form>                
+        {% endfor %}
+    </div>
+    
+
+{% endblock %}
